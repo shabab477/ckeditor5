@@ -48,7 +48,7 @@ export default class ListStyleEditing extends Plugin {
 
 		// Extend schema.
 		model.schema.extend( 'listItem', {
-			allowAttributes: [ 'listStyle' ]
+			allowAttributes: [ 'listStyle', 'listReversed', 'listStart' ]
 		} );
 
 		editor.commands.add( 'listStyle', new ListStyleCommand( editor, DEFAULT_LIST_TYPE ) );

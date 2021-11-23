@@ -47,9 +47,13 @@ describe( 'ListStyleEditing', () => {
 	} );
 
 	describe( 'schema rules', () => {
-		it( 'should allow set `listStyle` on the `listItem`', () => {
-			expect( model.schema.checkAttribute( [ '$root', 'listItem' ], 'listStyle' ) ).to.be.true;
-		} );
+		const attributes = [ 'listStyle', 'listReversed', 'listStart' ];
+
+		for ( const attribute of attributes ) {
+			it( `should allow set \`${ attribute }\` on the \`listItem\``, () => {
+				expect( model.schema.checkAttribute( [ '$root', 'listItem' ], 'listStyle' ) ).to.be.true;
+			} );
+		}
 	} );
 
 	describe( 'command', () => {
