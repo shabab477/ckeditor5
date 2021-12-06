@@ -44,7 +44,7 @@ export function mergeViewElementAttributes( target, source ) {
 
 	for ( const key in source ) {
 		// Merge classes.
-		if ( Array.isArray( source[ key ] ) ) {
+		if ( Array.isArray( source[ key ] ) && Array.isArray( target[ key ] ) ) {
 			result[ key ] = Array.from( new Set( [ ...target[ key ], ...source[ key ] ] ) );
 		}
 
